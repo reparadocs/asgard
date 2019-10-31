@@ -1,2 +1,3 @@
-web: gunicorn myproject.wsgi
+web: gunicorn asgard.wsgi
+
 
