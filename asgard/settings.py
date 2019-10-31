@@ -25,7 +25,7 @@ SECRET_KEY = '!rdzb0wmw)djvkavws_%wt#4=1geu%u46-r4)$m9)+9z(*iwqe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 import django_heroku
 
