@@ -13,7 +13,7 @@ class OptionSerializer(serializers.ModelSerializer):
 
   class Meta:
     model = Option
-    exclude = ('id',)
+    exclude = ()
 
 class QuestionSerializer(serializers.ModelSerializer):
   option_set = OptionSerializer(many=True)
