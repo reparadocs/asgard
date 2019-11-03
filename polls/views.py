@@ -46,3 +46,16 @@ class SubmitQuestion(APIView):
       return Response(serializer.data)
     else:
       return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class CommentView(APIView):
+  def get(self, request, format=None):
+    comments = Comment.objects.order_by('-id')[:20]
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
+
+  def post(self, request, format=None):
+    serializer = CommentSerializer(data=request.data)
+    if serializer.is_valid():
+      serializer.save()
+      return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

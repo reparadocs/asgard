@@ -15,6 +15,11 @@ class OptionSerializer(serializers.ModelSerializer):
     model = Option
     exclude = ()
 
+class CommentSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Comment 
+    exclude = ('id',)
+    
 class QuestionSerializer(serializers.ModelSerializer):
   option_set = OptionSerializer(many=True)
 

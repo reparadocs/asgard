@@ -15,3 +15,6 @@ class Option(models.Model):
 class Vote(models.Model):
   chosen = models.ForeignKey(Option, on_delete=models.CASCADE)
   user_id = models.CharField(max_length=100)
+
+class Comment(models.Model):
+  text = models.CharField(max_length=500)
